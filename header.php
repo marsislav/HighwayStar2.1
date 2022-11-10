@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes();?>>
 <head>
     <!-- Metas -->
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=<?php bloginfo('charset');?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Marsislav" />
     <!-- Links -->
@@ -14,7 +14,7 @@
     
     <link href="css/main.css" rel="stylesheet" />
     <!-- Document Title -->
-    <title>HighwayStar 2.1</title>
+    <?php wp_head(); ?>
 </head>
 <body>
   <!-- HEADER SECTION -->  
@@ -75,9 +75,20 @@
       <img src="images/hero.svg" alt="">
       <div class="container">
         <!-- Hero Title -->
-        <h1>The Spirit of<br>Digital Agency.</h1>
+        <?php if (have_posts()){?>
+            <?php while(have_posts()){?>
+                <?php the_post();?>
+        <h1><a href="<?php the_permalink();?>" title="<?php the_title_attribute();?>"><?php the_title();?></a></h1>
+        
         <!-- Hero Title Info -->
-        <p>Vestibulum ac diam sit amet quam vehicula elementum<br> amet est on dui. Nulla porttitor accumsan tincidunt.</p>
+        <p><?php the_excerpt();?></p>
+        <div>
+            Posted on: <a href="<?php echo get_permalink( );?>"> 
+            <time datetime="<?php echo get_the_date('c');?>">
+                <?php echo get_the_date(); ?>
+            </time></a>
+            By: <a href="<?php echo get_author_posts_url(get_the_author_meta('ID'));?>"> <?php echo get_the_author(); ?> </a>    
+        </div><?php }}?>
         <div class="hero-btns">
           <!-- Hero Btn First -->
           <a data-scroll href="#about-us">More About us</a>
@@ -86,4 +97,6 @@
         </div>
       </div>
     </div>
+    
+
   </header>

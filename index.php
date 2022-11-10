@@ -1,5 +1,8 @@
 <?php get_header();?>
   <!-- SERVICES SECTION -->  
+ 
+
+    
   <section id="about-us" class="services">
     <div class="container-fluid">
       <div class="side-img"> 
@@ -11,7 +14,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-4 service-txt">
-            <h2>Anything you need,we’ve got you covered</h2>
+            <h2><?php the_title();?></h2>
             <div class="hero-btns service-btn">
               <a data-scroll href="#contact-us">Get in Touch</a>
             </div>
@@ -38,6 +41,8 @@
       </div>
     </div>
   </section>
+
+  
   <!-- ABOUT SECTION -->
   <section class="about">
     <div class="container">
