@@ -17,10 +17,18 @@
                 <a href="<?php echo esc_url(home_url('/'));?>">
                     <?php esc_html(bloginfo('name')); ?>
                 </a>
-            </div>
+            </div>   
             <?php get_search_form(true);?>
-
         </div>
+            <div class="main-navigation">
+                <div class="container">
+                 <nav role="navigation" aria-label="<?php esc_html_e ('Main navigation', 'hs21')?>">
+                    <?php wp_nav_menu(array (
+                        'theme_location'=>'main-menu'
+                    ));?>
+                </nav>
+            </div>
+            </div>
     </div>
 </header>
 
