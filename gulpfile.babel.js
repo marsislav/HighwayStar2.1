@@ -4,14 +4,18 @@ import cleanCSS from "gulp-clean-css";
 import gulpif from "gulp-if";
 import sourcemaps from "gulp-sourcemaps";
 import imagemin from "gulp-imagemin";
+//import webpack from "webpack-stream";
 //import del from "del";
-//import sass from "gulp-sass";
 const sass = require("gulp-sass")(require("sass"));
 const PRODUCTION = yargs.argv.prod;
 const paths = {
   images: {
     src: "src/assets/images/**/*.{jpg,jpeg,gif, png}",
     dest: "dist/assets/images",
+  },
+  scripts: {
+    src: "src/assets/js/bundle.js",
+    dest: "dist/assets/js",
   },
   other: {
     src: [
@@ -50,10 +54,17 @@ export const copy = () => {
   return gulp.src(paths.other.src).pipe(gulp.dest(paths.other.dest));
 };
 
+export const scripts = () => {
+  return gulp
+    .src(paths.scripts.src)
+    .pipe(webpack())
+    .pipe(gulp.dest(paths.scripts.dest));
+};
+
 export const build = (done) => {
   gulp.series(gulp.parallel(styles, images, copy))(done);
 };
 export const dev = (done) => {
-  gulp.series(gulp.parallel(styles, images, copy), watch)(done);
+  gulp.series(gulp.parallel(styles, images, copy, scripts), watch)(done);
 };
 export default dev;

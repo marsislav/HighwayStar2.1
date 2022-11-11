@@ -10,7 +10,7 @@ register_sidebar(array (
     'after_title'=>'</h5>'
 ));
 }
-/*
+
 $footer_layout=sanitize_text_field(get_theme_mod('hs21_footer_layout', '3,3,3,3'));
 $footer_layout=preg_replace('/\s+/','', $footer_layout);
 $columns=explode(',', $footer_layout);
@@ -34,7 +34,7 @@ foreach ($columns as $i => $column) {
         'after_title'=>'</h5>'
     ));
 }
-TO FIXXX!!!!!!!!!!!!*/ 
+
 
 add_action('widgets_init', 'hs21_sidebar_widgets');
 
