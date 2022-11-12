@@ -14,7 +14,11 @@ const paths = {
     dest: "dist/assets/images",
   },
   scripts: {
-    src: "src/assets/js/bundle.js",
+    src: [
+      "src/assets/js/bundle.js",
+      "src/assets/js/admin.js",
+      "src/assets/js/customize-preview.js",
+    ],
     dest: "dist/assets/js",
   },
   other: {
@@ -55,10 +59,12 @@ export const copy = () => {
 };
 
 export const scripts = () => {
-  return gulp
-    .src(paths.scripts.src)
-    .pipe(webpack())
-    .pipe(gulp.dest(paths.scripts.dest));
+  return (
+    gulp
+      .src(paths.scripts.src)
+      //.pipe(webpack())
+      .pipe(gulp.dest(paths.scripts.dest))
+  );
 };
 
 export const build = (done) => {
