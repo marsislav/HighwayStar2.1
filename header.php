@@ -7,6 +7,7 @@
     <meta name="author" content="Marsislav" />  
     <link href="css/main.css" rel="stylesheet" />
     <!-- Document Title -->
+    <?php wp_enqueue_script("jquery"); ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class();?>>
@@ -15,7 +16,12 @@
         <div class="container">
             <div class="header-logo">
                 <a href="<?php echo esc_url(home_url('/'));?>">
-                    <?php esc_html(bloginfo('name')); ?>
+                    <?php if (has_custom_logo()) {
+                        the_custom_logo();
+                    } else {    
+                        esc_html(bloginfo('name'));
+                    }
+                    ?>
                 </a>
             </div>   
             <?php get_search_form(true);?>

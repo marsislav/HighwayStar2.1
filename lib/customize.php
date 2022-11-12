@@ -54,9 +54,9 @@ return is_single() && $post->post_type==='post';
 
 
     /*Footer settings*/
-    $wp_customize->selective_refresh->add_partial('$hs21_footer_partial', array (
+    $wp_customize->selective_refresh->add_partial('hs21_footer_partial', array (
         'settings'=>array('hs21_site_info', 'hs21_footer_bg', 'hs21_footer_layout' ),
-        'selector'=>'footer',
+        'selector'=>'#footer',
         'container_inclusive'=>false,
         'render_callback'=>function () {
             get_template_part('template-parts/footer/info');

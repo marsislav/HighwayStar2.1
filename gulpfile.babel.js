@@ -68,7 +68,7 @@ export const scripts = () => {
 };
 
 export const build = (done) => {
-  gulp.series(gulp.parallel(styles, images, copy))(done);
+  gulp.series(gulp.parallel(styles, images, copy, scripts))(done);
 };
 export const dev = (done) => {
   gulp.series(gulp.parallel(styles, images, copy, scripts), watch)(done);

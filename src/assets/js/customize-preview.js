@@ -1,4 +1,15 @@
+window.onload = function () {
+  if (window.jQuery) {
+    // jQuery is loaded
+    alert("Yeah!");
+  } else {
+    // jQuery is not loaded
+    alert("Doesn't Work");
+  }
+};
+
 import $ from "jquery";
+//const $ = require("jquery");
 import strip_tags from "./helpers/strip-tags";
 
 wp.customize("blogname", (value) => {
