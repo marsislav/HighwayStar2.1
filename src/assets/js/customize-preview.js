@@ -28,7 +28,7 @@ wp.customize("hs21_display_author_info", (value) => {
   });
 });
 
-wp.customize("hs21_accent_colour", (value) => {
+wp.customize("hs21_accent_color", (value) => {
   value.bind((to) => {
     let inline_css = ``;
     let inline_css_obj = hs21["inline-css"];

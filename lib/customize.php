@@ -41,13 +41,13 @@ return is_single() && $post->post_type==='post';
         'description'=>esc_html__('You can change general options from here', 'hs21')
     ));
 
-    $wp_customize->add_setting('hs21_accent_colour', array (
-        'default'=>'#20ddae',
+    $wp_customize->add_setting('hs21_accent_color', array (
+        'default'=>'#CE171F',
         'transport'=>'postMessage',
         'sanitize_callback'=>'sanitize_hex_color',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hs21_accent_colour', array (
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hs21_accent_color', array (
         'label'=>__('Accent color', 'hs21'),
         'section'=>'hs21_general_options',
     )));
