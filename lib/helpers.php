@@ -12,26 +12,26 @@ printf(
 
 );
 }
-    
+    /*
 
     function hs21_readMore_link() {
        
         echo '<a href="'.esc_url(get_permalink()).'"title="' . the_title_attribute(['echo'=>false]).'">';
-        /* BUG!
+        
         printf(
             wp_kses(
             __('Read more <span class="u-screen-reader-text">About %</span>', 'hs21'), 
-            [
+           /* [
                 'span'=>[
                     'class'=>[]
                     ]
-                ]
+               
             ),
-
-            get_the_title()
         );
+            get_the_title();
+    
       
         echo '</a>';
- */
-    }    
+ 
+    }     ]*/
 ?>
