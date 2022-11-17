@@ -1,4 +1,6 @@
 <?php
+
+
 function hs21_customize_register($wp_customize) {
 $wp_customize->get_setting('blogname')->transport='postMessage';
 
@@ -11,29 +13,36 @@ $wp_customize->selective_refresh->add_partial('blogname', array (
     }
 ));
 
+
 /*Single post options*/
-    $wp_customize->add_section('hs21_single_blog_options', array (
-        'title'=>esc_html__('Single blog options', 'hs21'),
-        'description'=>esc_html__('You can change single blog options from here', 'hs21'),
-        'active_callback'=>'hs21_show_single_blog_section'
-    ));
-    $wp_customize->add_setting('hs21_display_author_info', array (
-        'default'=>true,
-        'transport'=>'postMessage',
-        'sanitize_callback'=>'hs21_sanitize_checkbox'
-    ));
-    $wp_customize->add_control('hs21_display_author_info', array (
-        'type'=>'checkbox',
-        'label'=>esc_html('Show author info', 'hs21'),
-        'section'=>'hs21_single_blog_options'
-    ));
+$wp_customize->add_section('hs21_single_blog_options', array (
+    'title'=>esc_html__('Single blog options', 'hs21'),
+    'description'=>esc_html__('You can change single blog options from here', 'hs21'),
+    'active_callback'=>'hs21_show_single_blog_section'
+));
+$wp_customize->add_setting('hs21_display_author_info', array (
+    'default'=>true,
+    'transport'=>'postMessage',
+    'sanitize_callback'=>'hs21_sanitize_checkbox'
+));
+$wp_customize->add_control('hs21_display_author_info', array (
+    'type'=>'checkbox',
+    'label'=>esc_html('Show author info', 'hs21'),
+    'section'=>'hs21_single_blog_options'
+));
+
+
 function hs21_sanitize_checkbox ($checked) {
 return (isset($checked) && $checked===true) ? true : false;
 }
 function hs21_show_single_blog_section () {
-    global $post;
+global $post;
 return is_single() && $post->post_type==='post';
 }
+
+/*END OF Single post options*/
+
+
 /*General settings*/
 
     $wp_customize->add_section('hs21_general_options', array (
@@ -143,3 +152,4 @@ function hs21_sanitize_footer_bg ($input) {
     }
     return 'dark';
 }
+
