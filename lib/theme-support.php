@@ -12,6 +12,15 @@ add_theme_support('custom-logo', array (
     'flex-width'=>true,
     
 ));
+add_theme_support('post-formats', array (
+    'aside', 
+    'image',
+    'video',
+    'quote',
+    'link',
+    'gallery',
+    'audio'
+));
 add_theme_support('align-wide');
 }
 add_action('after_setup_theme', 'hs21_theme_support');
