@@ -4,7 +4,7 @@
 <?php if (have_posts()){?>
   <?php while (have_posts()){?>
   <?php the_post();?>
-  <?php get_template_part('template-parts/post/content');
+  <?php get_template_part('template-parts/post/content', get_post_format());
   if (get_theme_mod('hs21_display_author_info', true)){
   get_template_part('template-parts/single/author');
 }  
