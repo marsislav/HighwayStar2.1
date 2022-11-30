@@ -11,7 +11,17 @@ footer {
   }
 }
 .site-info.light {
-  background: #555555;
+  background: #555;
+
+  .container {
+    padding: 0.5rem 0;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.site-info.dark {
+  background: #555;
 
   .container {
     padding: 0.5rem 0;

@@ -5,7 +5,7 @@ $site_info=get_theme_mod('hs21_site_info', '');
 <?php if ($site_info) {?>
 <div class="site-info <?php echo esc_html($footer_bg);?>">
     <div class="container">
-        <div class="row">
+        <div class="row center">
 
             <?php
             $allowed=array(
