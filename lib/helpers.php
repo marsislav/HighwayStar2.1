@@ -12,6 +12,14 @@ printf(
 
 );
 }
+
+function hs21_meta( $id, $key, $default) {
+    $value = get_post_meta( $id, $key, true );
+    if(!$value && $default) {
+        return $default;
+    }
+    return $value;
+}
     /*
 
     function hs21_readMore_link() {

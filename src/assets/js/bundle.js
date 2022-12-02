@@ -2985,4 +2985,10 @@
 
 jQuery(document).ready(() => {
   jQuery(".hs21-slider").slick();
+  jQuery(".post-gallery").slick({
+    arrows:false,
+    adaptiveHeight:true
+  });
 });
+
+

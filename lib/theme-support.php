@@ -22,6 +22,8 @@ add_theme_support('post-formats', array (
     'audio'
 ));
 add_theme_support('align-wide');
+
+//Custom image sizes
 add_image_size('hs21-image', 1200, 0);
 }
 add_action('after_setup_theme', 'hs21_theme_support');

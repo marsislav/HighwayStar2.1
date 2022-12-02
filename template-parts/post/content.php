@@ -1,4 +1,4 @@
-<article <?php post_class('post-excerpt')?>">
+<article <?php post_class('post-excerpt')?>>
 <?php if (get_the_post_thumbnail() !=='' ){ ?>
   <div class="post-thumbnail">
     <?php the_post_thumbnail('large');?>
