@@ -61,6 +61,19 @@ return is_single() && $post->post_type==='post';
         'section'=>'hs21_general_options',
     )));
 
+//Portfolio slug
+$wp_customize->add_setting('hs21_portfolio_slug', array (
+    'default'=>'portfolio',
+    'transport'=>'postMessage',
+    'sanitize_callback'=>'sanitize_text_field',
+));
+
+$wp_customize->add_control('hs21_portfolio_slug', array (
+    'type'=>'text',
+    'label'=>esc_html__('Portfolio slug', 'hs21'),
+    'description'=>esc_html__('Will appear in the archive url', 'hs21'),
+    'section'=>'hs21_general_options'
+));
 
     /*Footer settings*/
     $wp_customize->selective_refresh->add_partial('hs21_footer_partial', array (
