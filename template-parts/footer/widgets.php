@@ -11,17 +11,19 @@ foreach ($columns as $i =>$column) {
 }
 ?>
 <?php if($widgets_active) {?>
-<footer class="footer-<?php echo $footer_bg?>">
-    <div class="container">
-        <div class="row">
+    
+    <section id="cta" class="footer-<?php echo $footer_bg?>">
+    <div class="row">
             <?php foreach ($columns as $i => $column){?>
-                <div class="col-md-<?php echo $column ?>">
+                <div class="col-<?php echo $column ?>">
                     <?php if (is_active_sidebar('footer-sidebar-' . ($i+1))) {
                         dynamic_sidebar('footer-sidebar-' . ($i+1));
                     }
                     ?>
                 </div>
             <?php } ?>
-        </div>
-    </div>
+            </div>
+    </section>
+    
+
 <?php } ?>

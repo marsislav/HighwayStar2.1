@@ -4,9 +4,8 @@ $site_info=get_theme_mod('hs21_site_info', '');
 ?>
 <?php if ($site_info) {?>
 <div class="site-info <?php echo esc_html($footer_bg);?>">
-    <div class="container">
-        <div class="row center">
-
+<ul class="copyright">
+<li>
             <?php
             $allowed=array(
                 'a'=>array(
@@ -16,7 +15,7 @@ $site_info=get_theme_mod('hs21_site_info', '');
                 )
             );
             echo wp_kses($site_info, $allowed);?>
-        </div>
-    </div>
+      </li>
+        </ul>
 </div>
 <?php } ?>

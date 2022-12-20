@@ -120,6 +120,8 @@ $wp_customize->add_setting('hs21_footer_bg', array (
         'section'=>'hs21_footer_options'
 
     ));
+
+  
     //Footer widgets columns
 
     $wp_customize->add_setting('hs21_footer_layout', array (
@@ -135,8 +137,145 @@ $wp_customize->add_setting('hs21_footer_bg', array (
         'section'=>'hs21_footer_options'
 
     ));
+   //End of columns
 
-    //End of columns
+   //Socials
+    $wp_customize->add_setting('hs21_facebook_handle', [
+        'default'=>''
+        
+    ]);
+ 
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'hs21_social_facebook_input',
+        array (
+            'type'=>'text',
+        'label'=>esc_html__('Facebook','hs21'),
+        'section'=>'hs21_footer_options',
+        'settings'=>'hs21_facebook_handle'
+        ))
+        );
+
+        $wp_customize->add_setting('hs21_instagram_handle', [
+            'default'=>''
+        ]);
+     
+        $wp_customize->add_control(new WP_Customize_Control(
+            $wp_customize,
+            'hs21_social_instagram_input',
+            array (
+                'type'=>'text',
+            'label'=>esc_html__('Instagram','hs21'),
+            'section'=>'hs21_footer_options',
+            'settings'=>'hs21_instagram_handle'
+            ))
+            );
+            
+            $wp_customize->add_setting('hs21_twitter_handle', [
+                'default'=>''
+            ]);
+         
+            $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'hs21_social_twitter_input',
+                array (
+                    'type'=>'text',
+                'label'=>esc_html__('Twitter','hs21'),
+                'section'=>'hs21_footer_options',
+                'settings'=>'hs21_twitter_handle'
+                ))
+                );
+
+                $wp_customize->add_setting('hs21_youtube_handle', [
+                    'default'=>''
+                ]);
+             
+                $wp_customize->add_control(new WP_Customize_Control(
+                    $wp_customize,
+                    'hs21_social_youtube_input',
+                    array (
+                        'type'=>'text',
+                    'label'=>esc_html__('Youtube','hs21'),
+                    'section'=>'hs21_footer_options',
+                    'settings'=>'hs21_youtube_handle'
+                    ))
+                    );
+            
+                    $wp_customize->add_setting('hs21_viber_handle', [
+                        'default'=>''
+                    ]);
+                 
+                    $wp_customize->add_control(new WP_Customize_Control(
+                        $wp_customize,
+                        'hs21_social_viber_input',
+                        array (
+                            'type'=>'text',
+                        'label'=>esc_html__('Viber','hs21'),
+                        'section'=>'hs21_footer_options',
+                        'settings'=>'hs21_viber_handle'
+                        ))
+                        );
+
+                        $wp_customize->add_setting('hs21_whatsapp_handle', [
+                            'default'=>''
+                        ]);
+                     
+                        $wp_customize->add_control(new WP_Customize_Control(
+                            $wp_customize,
+                            'hs21_social_whatsapp_input',
+                            array (
+                                'type'=>'text',
+                            'label'=>esc_html__('WhatAspp','hs21'),
+                            'section'=>'hs21_footer_options',
+                            'settings'=>'hs21_whatsapp_handle'
+                            ))
+                            );
+                        
+                        $wp_customize->add_setting('hs21_skype_handle', [
+                            'default'=>''
+                        ]);
+                     
+                     
+                        $wp_customize->add_control(new WP_Customize_Control(
+                            $wp_customize,
+                            'hs21_skype_input',
+                            array (
+                                'type'=>'text',
+                            'label'=>esc_html__('Skype','hs21'),
+                            'section'=>'hs21_footer_options',
+                            'settings'=>'hs21_skype_handle'
+                            ))
+                            );
+
+                            $wp_customize->add_setting('hs21_email_handle', [
+                                'default'=>''
+                            ]);
+
+                        $wp_customize->add_control(new WP_Customize_Control(
+                            $wp_customize,
+                            'hs21_social_email_input',
+                            array (
+                                'type'=>'text',
+                            'label'=>esc_html__('Email','hs21'),
+                            'section'=>'hs21_footer_options',
+                            'settings'=>'hs21_email_handle'
+                            ))
+                            );
+
+                            $wp_customize->add_setting('hs21_phone_handle', [
+                                'default'=>''
+                            ]);
+                         
+                            $wp_customize->add_control(new WP_Customize_Control(
+                                $wp_customize,
+                                'hs21_social_phone_input',
+                                array (
+                                    'type'=>'text',
+                                'label'=>esc_html__('Phone','hs21'),
+                                'section'=>'hs21_footer_options',
+                                'settings'=>'hs21_phone_handle'
+                                ))
+                                );
 
 }
 add_action('customize_register', 'hs21_customize_register');

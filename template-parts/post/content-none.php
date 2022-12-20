@@ -1,1 +1,0 @@
-<p><?php echo apply_filters ('hs21_no_posts_text', esc_html__('Sorry, no posts available', 'hs21'));?></p>
