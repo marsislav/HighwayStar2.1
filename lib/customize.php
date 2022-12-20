@@ -139,7 +139,7 @@ $wp_customize->add_setting('hs21_footer_bg', array (
     ));
    //End of columns
 
-   //Socials
+   //Find me icons
     $wp_customize->add_setting('hs21_facebook_handle', [
         'default'=>''
         
@@ -230,6 +230,23 @@ $wp_customize->add_setting('hs21_footer_bg', array (
                             'settings'=>'hs21_whatsapp_handle'
                             ))
                             );
+
+                            $wp_customize->add_setting('hs21_github_handle', [
+                                'default'=>''
+                            ]);
+                         
+                            $wp_customize->add_control(new WP_Customize_Control(
+                                $wp_customize,
+                                'hs21_social_github_input',
+                                array (
+                                    'type'=>'text',
+                                'label'=>esc_html__('GitHub','hs21'),
+                                'section'=>'hs21_footer_options',
+                                'settings'=>'hs21_github_handle'
+                                ))
+                                );
+
+                            
                         
                         $wp_customize->add_setting('hs21_skype_handle', [
                             'default'=>''
